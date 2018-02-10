@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1040623196943",
+    "firebase_url": "https://xtvtco.firebaseio.com",
+    "project_id": "xtvtco",
+    "storage_bucket": "xtvtco.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040623196943:android:c6b4b0deb24e9a78",
+        "android_client_info": {
+          "package_name": "co.xtvt.xtvtco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040623196943-5fo103598bfm9m0frd33c7hbstbtebt5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.xtvt.xtvtco",
+            "certificate_hash": "6e99dc59d2eeb5dd81bb1654b317cf0c9f35875b"
+          }
+        },
+        {
+          "client_id": "1040623196943-12ldecrs5rins709l3msjah8j6dkjhld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK6HtJh5xKPRdcuIMYPZnanoBcAQXi6-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040623196943-12ldecrs5rins709l3msjah8j6dkjhld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

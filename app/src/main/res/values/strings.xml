@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">xtvtco</string>
+    <string name="email_format_is_invalid">Email format is invalid.</string>
+    <string name="reset_password_message">An email will be send to reset your password.</string>
+    <string name="username_exists">Username already exists.</string>
+    <string name="email_exists">Email already exists.</string>
+    <string name="minimum_length_3">Minimum length must be at least 3.</string>
+    <string name="minimum_length_6">Minimum length must be at least 6.</string>
+    <string name="alphabetical_numerical">Value must be alphabetical and numerical only.</string>
+    <string name="title_activity_dashboard">ActivityDashboard</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

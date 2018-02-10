@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textAlignment="center"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:layout_marginTop="80dp"/>
 
             <android.support.design.widget.TextInputLayout
@@ -96,6 +96,8 @@
         android:layout_marginRight="40dp"
         android:id="@+id/buttonLogin"
         android:text="Log in"
+        android:background="@drawable/btn_background_custom"
+        android:textColor="@drawable/btn_text_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"/>

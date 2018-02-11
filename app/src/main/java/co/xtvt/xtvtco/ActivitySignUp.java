@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -50,8 +51,9 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        //hide action bar
-        getSupportActionBar().hide();
+        getSupportActionBar().setTitle(R.string.signup);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -73,11 +75,25 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-        findViewById(R.id.textViewLoginHere).setOnClickListener(this);
         findViewById(R.id.buttonSignUp).setOnClickListener(this);
 
         enableButton();
         callTextChangedListener();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void callTextChangedListener(){
@@ -213,7 +229,6 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
                     textInputLayoutUsername.setErrorEnabled(true);
                     textInputLayoutUsername.setError(getString(R.string.minimum_length_3));
                 } else {
-                    userNameValid = true;
                     listener.onStart();
                     DatabaseReference usernameRef = FirebaseDatabase.getInstance().getReference("usernames");
                     usernameRef.orderByValue().equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -321,11 +336,6 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
             Intent intent;
 
             switch (v.getId()) {
-                case R.id.textViewLoginHere:
-                    intent = new Intent(ActivitySignUp.this, ActivityLogin.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    break;
                 case R.id.buttonSignUp:
                     progressBar.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {

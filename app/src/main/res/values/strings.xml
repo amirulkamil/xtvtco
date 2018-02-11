@@ -13,4 +13,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="logout_confirmation">Are you sure you want to log out?</string>
+
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="resetpassword">Reset Password</string>
 </resources>

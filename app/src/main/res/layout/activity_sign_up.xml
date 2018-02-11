@@ -21,18 +21,10 @@
             android:focusableInTouchMode="true"
             android:fitsSystemWindows="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:text="Signup"
-                android:textAlignment="center"
-                android:textSize="20sp"/>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
@@ -78,17 +70,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </android.support.design.widget.TextInputLayout>
-
-            <TextView
-                android:id="@+id/textViewLoginHere"
-                android:textAlignment="center"
-                android:text="Login Here"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

@@ -32,10 +32,20 @@
 
     <string name="profile">Profile</string>
     <string name="activities">Activities</string>
+    <string name="people">People</string>
+    <string name="posts">Posts</string>
+    <string name="media">Media</string>
+    <string name="groups">Groups</string>
 
     <string name="email">Email</string>
     <string name="Username">Username</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="create_account">Create An Account</string>
+
+    <string name="press_back_again_to_exit">Press back again to exit.</string>
+
+    <string name="activity">Activity</string>
+    <string name="post">Post</string>
+
 </resources>

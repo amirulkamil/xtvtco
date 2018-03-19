@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.xtvt.xtvtco.ActivityDashboard">
+    tools:context="co.xtvt.xtvtco.ActivityDashboard"
+    android:animateLayoutChanges="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +16,8 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:animateLayoutChanges="true">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -25,47 +27,160 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay">
             </android.support.v7.widget.Toolbar>
 
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabMode="scrollable">
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tabHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tabActivities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activities" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tabPeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/people" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tabPosts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/posts" />
+
+                <android.support.design.widget.TabItem
+                    android:id="@+id/tabMedia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/media" />
+
+            </android.support.design.widget.TabLayout>
         </android.support.design.widget.AppBarLayout>
 
-        <include
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_above="@id/bottomNavigation"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_margin="10dp"
             android:layout_below="@+id/appBarLayout"
-            layout="@layout/content_activity_dashboard" />/>
-
-        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
-            android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:background="?android:attr/windowBackground"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_bar_navigation"
-            android:minHeight="?attr/actionBarSize">
-        </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        </android.support.v4.view.ViewPager>
 
-        <!--<android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:background="?android:attr/windowBackground"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_bar_navigation" />-->
     </RelativeLayout>
 
+    <View
+        android:id="@+id/shadowView"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BFFFFFFF"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="260dp">
+
+        <TextView
+            android:id="@+id/textViewActivities"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="@string/activity"
+            android:layout_marginRight="0dp"
+            android:visibility="invisible"
+            android:gravity="right|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_activity_black_24dp"
+            android:tint="@android:color/white"
+            android:visibility="invisible"
+            app:pressedTranslationZ="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="180dp">
+
+        <TextView
+            android:id="@+id/textViewPosts"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="@string/post"
+            android:layout_marginRight="0dp"
+            android:visibility="invisible"
+            android:gravity="right|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_post_black_24dp"
+            android:tint="@android:color/white"
+            android:visibility="invisible"
+            app:pressedTranslationZ="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="100dp">
+
+        <TextView
+            android:id="@+id/textViewMedia"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="@string/media"
+            android:layout_marginRight="0dp"
+            android:visibility="invisible"
+            android:gravity="right|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_menu_camera"
+            android:tint="@android:color/white"
+            android:visibility="invisible"
+            android:layout_marginRight="@dimen/fab_margin"
+            app:pressedTranslationZ="12dp"/>
+    </LinearLayout>
+
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="65dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_add"
+        app:pressedTranslationZ="12dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
